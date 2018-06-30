@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="css/denglu.css"/>
 		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/shopcar.css"/>
 		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="iconfont1/iconfont.css"/>
 		<script type="text/javascript" src="js/require.js" defer async="true" data-main="js/main"></script>
@@ -19,14 +19,14 @@
 					<li><a href="javascript:;">客户服务</a></li>
 				</ul>
 				<div id="logo">
-					<a href="">
+					<a href="index.html">
 						<img src="images/gucci-logo@2x.png"/>
 					</a>
 				</div>
 				<span id="top-right">
 					<a href="denglu.html">登录</a>
 					<span class="save"><a class="iconfont icon-shoucang1" href=""></a></span>
-					<span class="shop-car"><i class="iconfont icon-baozhuanhuan"></i>&ensp;<a href="shopcar.html">购物袋</a></span>
+					<span class="shop-car"><i class="iconfont icon-baozhuanhuan"></i>&ensp;<a href="">购物袋</a></span>
 					<span><span>搜索</span><a id="fangdajing" href="" class="iconfont icon-fangdajing"></a></span>
 				</span>
 			</div>
@@ -42,35 +42,33 @@
 				</ul>
 			</div>
 		</div>
-		
-		<!--con-->
-		<div id="content" class="clear-fix">
-			<h3>登录</h3>
-			<div class="content-box clear-fix">
-				<div class="d-left">
-					<p>手机号码/电子邮箱</p>
-					<p><input type="text" id="account" placeholder="请输入电子邮箱或手机号" /></p>
-					<p class="exp"></p>
-					<p>密码</p>
-					<p><input type="password" name="" /></p>
-					<p><input class="check-box" type="checkbox" name="" id="" value="" />记住我</p>
-					<p><a class="denglu1" href="javascript:;">登录</a></p>
-					<p><a class="forget-password" href="javascript:;">忘记密码？</a></p>
-				</div>
-				<div class="d-right">
-					<p>没有账号？</p>
-					<p>拥有古驰账号您将获得以下权利：</p>
-					<ul>
-						<li>保存您的心愿清单</li>
-						<li>个性化您的推荐内容</li>
-						<li>订单寄送追踪及退换货管理</li>
-					</ul>
-					<a class="create-account" href="javascript:;">创建账户</a>
+		<!--banner-->
+		<div class="banner-box" class="clear-fix">
+			<img id="banner-pic" src="images/15290644890218024_content_HomepageHeroHeaderStandard_1600x640_1529058605_HomepageHeroHeaderStandard_S83-Lookbook-Look075_001_Default.jpg"/>
+			<div class="banner-left">
+				<h2>您的购物袋为空</h2>
+				<a class="go-on" href="javascript:;">继续购物</a>
+			</div>
+			<div class="banner-right">
+				<h4><i class="iconfont icon-xinxi1">&ensp;</i>免费配送</h4>
+				<div class="help">
+					<a class="help-main" href="javascript:;">需要帮助？<i>+</i></a>
+					<div class="help-hidden">
+						<a href="javascript:;"><i class="iconfont icon-xinxi">&ensp;</i>在线顾问</a>
+					</div>
+					<a class="help-main" href="javascript:;">支付方式<i>+</i></a>
+					<a class="help-main" href="javascript:;">礼品包装<i>+</i></a>
+					<a class="help-main" href="javascript:;">配送方式<i>+</i></a>
+					<a class="help-main" href="javascript:;">退换货政策<i>+</i></a>
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		
 		<!--bottom-->
-		<div class="bottom-box">
+		<!--<div class="bottom-box">
 			<div class="bottom-con clear-fix">
 				<div class="bottom-tubiao">
 					<a href="javascript:;">^</a>
@@ -143,49 +141,7 @@
 				<i><a class="iconfont icon-guohui" href="javascript:;"> 沪公网安备 31010602001727号</a></i>
 				<i><a href="javascript:;">沪ICP备13010397号-2</a></i>
 			</div>
-		</div>
-		
-		<!--注册页-->
-		<div id="register-mark">
-			<div class="register clear-fix">
-				<button>X</button>
-				<h3>创建您的帐户</h3>
-				<div class="register-con">
-					<p class="phone-num">手机号码</p>
-					<p><input type="text" name="txt1" id="txt1" placeholder="请输入11位手机号码" value="" /></p>
-					<p class="p-txt1"></p>
-					<p>图形验证码</p>
-					<p>
-						<input type="text" name="txt2" id="txt2" placeholder="请输入图中所示验证码" value="" />
-						<a class="random-num" href="javascript:;"></a>
-						<a class="change-random" href="javascript:;">换一张</a>
-					</p>
-					<p class="p-txt2"></p>
-					<p>手机验证码</p>
-					<p>
-						<input type="tel" name="txt3" id="txt3" placeholder="请输入短信验证码" value="" />
-						<a href="javascript:;">发送验证码</a>
-					</p>
-					<p class="p-txt3"></p>
-					<p><span>设置密码</span><span class="shour-password">确认密码</span></p>
-					<p>
-						<input type="text" name="txt4" id="txt4" placeholder="至少六个字符含数字大小写字母" value="" />
-						<input type="text" name="txt5" id="txt5" placeholder="确认密码" value="" />
-					</p>
-					<p class="password-alt clear-fix"><span class="p-txt4"></span><span class="p-txt5"></span></p>
-					<p><input type="checkbox" name="check1" id="check1" value="" />&ensp;<span>我愿意接收Gucci邮件获取特别优惠，新款推荐及更多内容</span></p>
-					<div class="re-box">
-						<p>电子邮箱</p>
-						<p><input type="text" name="re-email" id="re-email" placeholder="请输入电子邮箱地址" value="" /></p>
-					</div>
-					<p><input type="checkbox" name="check2" id="check2" value="" />&ensp;<span>创建帐号代表您已接受Gucci的<a href="javascript:;">隐私政策</a>和<a href="javascript:;">销售条款</a></span></p>
-					<p class="jieshou"></p>
-					<div class="create">
-						<a href="javascript:;">创建账户</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		</div>-->
 		
 		<!--js操作-->
 		<!--中国遮罩-->
@@ -194,7 +150,7 @@
 				<div class="area-select-title">
 					<h3>请选择您所在的区域。</h3>
 					<p>请注意，在浏览过程中更改您的位置将会清除购物袋中的所有商品。</p>
-					<a href="javascript:;" class="area-close">x</a>
+					<a href="javascript:;" class="area-close">×</a>
 				</div>
 				<div class="area-con-top">
 					<h4>网上商城</h4>

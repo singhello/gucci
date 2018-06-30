@@ -1,0 +1,67 @@
+/*banner*/
+.banner-box {
+  height: 422px;
+  width: 100%;
+  margin-top: 120px;
+  position: fixed;
+  z-index: -1; }
+
+#banner-pic {
+  width: 100%; }
+
+#banner {
+  width: 100%;
+  height: 404px;
+  background-size: 100%;
+  text-align: center;
+  position: absolute;
+  top: 69px; }
+
+.banner-box .banner-left {
+  position: absolute;
+  top: 82px;
+  left: 47px; }
+  .banner-box .banner-left h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 39px; }
+  .banner-box .banner-left .go-on {
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: #1B1B1B;
+    color: #E5DFD9;
+    text-align: center;
+    line-height: 40px; }
+  .banner-box .banner-left .go-on:hover {
+    background: #333333; }
+.banner-box .banner-right {
+  width: 345px;
+  height: 430px;
+  background: #fff;
+  position: absolute;
+  top: 35px;
+  right: 26px;
+  padding: 15px; }
+  .banner-box .banner-right h4 {
+    padding: 23px 0 21px;
+    text-align: center;
+    color: #4B4B4B;
+    font-size: 12px; }
+  .banner-box .banner-right .help {
+    width: 100%;
+    height: 59px; }
+    .banner-box .banner-right .help .help-main {
+      display: block;
+      font-size: 12px;
+      cursor: default;
+      color: #999999;
+      padding: 24px 25px 22px;
+      line-height: 12px;
+      border-top: 1px solid #C0C0C0; }
+      .banner-box .banner-right .help .help-main i {
+        float: right;
+        font-size: 24px;
+        font-weight: 600; }
+
+/*# sourceMappingURL=shopcar.css.map */

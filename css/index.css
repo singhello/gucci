@@ -649,9 +649,9 @@ input{outline:none;}
 }
 .area-close{
 	float: right;
-	font-size: 60px;
+	font-size: 34px;
 	color: #999;
-	margin-top: -85px;
+	margin-top: -67px;
 }
 .area-con-top{
 	padding-left: 60px;
