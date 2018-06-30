@@ -1,0 +1,252 @@
+@charset "utf-8";
+html,body,ul,li,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img,input,figure{margin:0;padding:0}
+body{font-family: '宋体';}
+h1,h2,h3,h4,h5,h6{font-weight:normal;font-size:16px;}
+b,strong{font-weight:normal;}
+em,i{font-style:normal;}
+a,u{text-decoration:none;}
+img{border:0;display:block;}
+ul,ol,li{list-style:none;}
+input{outline:none;}
+.clear-fix:after{content:".";clear:both;display:block;height:0;overflow: hidden;visibility: hidden;}
+
+#top,#shose,.product-box3,.product-box4-pic,.story{width:96%;margin:0 auto;}
+/*top*/
+#top0{
+	width: 100%;
+	height:120px;
+	position: fixed;
+	top: 0;
+	background: black;
+	z-index: 999;
+}
+#top{
+	height: 49px;
+	padding-top: 20px;
+}
+#top .top-left li{
+	float: left;
+	line-height: 16px;
+	margin: 0 5px;
+}
+#top .top-left li a{
+	padding:0 10px;
+	font-size: 12px;
+	color: #e5dfd9;
+}
+#top .top-left li span{
+	color: #e5dfd9;
+	font-size: 12px;
+}
+#top .top-left li a:hover{
+	color: white;
+}
+#logo img{
+	position: absolute;
+	left: 0;top: -45px;right: 0;bottom: 0;
+	margin:auto;
+	float: left;
+	width:160px;
+	height:26px;
+}
+#top-right{
+	float: right;
+	font-size: 12px;
+	color: #e5dfd9;
+}
+#top-right span{
+	margin: 0 5px;
+}
+#top-right a{
+	color: #e5dfd9;
+}
+#top-right a:hover{
+	color: white;
+}
+#top-right .save a{
+	font-size: 16px;
+}
+#top-right .shop-car i{
+	font-size: 12px;
+}
+#top-right .shop-car:hover{
+	color:#fff;
+}
+#top-right #fangdajing{
+	width: 20px;
+	height: 20px;
+	font-size: 12px;
+	display: inline-block;
+	text-align: center;
+	line-height: 20px;
+}
+#top-right #fangdajing:hover{
+	background: #c0c0c0;
+}
+/*top-nav*/
+#top-nav ul{
+	text-align: center;
+}
+#top-nav ul li{
+	display: inline-block;
+}
+#top-nav ul li a{
+	display:block;
+	height: 51px;
+	font-size: 14px;
+	font-weight: 900;
+	color: #e5dfd9;
+	padding:0 16px;
+}
+#top-nav ul li a:hover{
+	color: #fff;
+	background: url(../img/sanjiao.jpg) no-repeat center;
+}
+/*bottom*/
+.bottom-box{
+	width: 100%;
+	background: #1b1b1b;
+	padding: 77px 0 44px;
+	position: relative;
+}
+.bottom-con{
+	width: 90%;
+	margin: 0 auto;
+}
+.bottom-con i{
+	margin-right: 5px;
+}
+.bottom-tubiao{
+	width: 34px;
+	height: 34px;
+	border: 1px solid #ccc;
+	text-align: center;
+	line-height: 89px;
+	font-size: 60px;
+	background: #fff;
+	position: absolute;
+	right: 24px;
+	top: -36px;
+}
+.bottom-tubiao a{
+	display: block;
+	color: #000;
+}
+.bottom-left,.bottom-left2,.bottom-center,.bottom-right1,.bottom-right2{
+	float: left;
+	margin: 0 3.5%;
+}
+.bottom-right1{
+	position: relative;
+}
+.online{
+	margin-top: 40px!important;
+}
+.two-code{
+	width: 110px;
+	height: 112px;
+	padding: 10px;
+	background: #fff;
+	position: absolute;
+	left: -120px;
+	top: 65px;
+	display: none;
+}
+.two-code img{
+	width: 100%;
+}
+.bottom-con .b-title{
+	font-size: 12px;
+	font-weight: 900;
+	color: #fff;
+	margin-bottom: 32px;
+}
+.bottom-con .about{
+	margin-top: 50px;
+}
+.bottom-con p{
+	font-size: 10px;
+	margin: 16px;
+}
+.bottom-con p a,.bottom-con p i{
+	color: #7f7c79;
+}
+.bottom-con p a:hover{
+	color: #FFF;
+}
+.b-r-b{
+	margin-top: 88px;
+}
+.undeline{
+	text-decoration:underline;
+}
+#email{
+	width: 210px;
+	height: 26px;
+	background: #000;
+	border: 0;
+	color: #fff;
+}
+#btn1,#btn2{
+	background: #000;
+	color: #fff;
+	border: 0;
+	height: 26px;
+}
+.downleft{
+	float: left;
+	width: 66px;
+	height: 32px;
+	background: url(../images/1_03.png) no-repeat left;
+	margin-right: 40px;
+	position: relative;
+}
+#apple{
+	position: absolute;
+	display: block;
+	width: 11px;
+	height: 12px;
+	left: 13px;
+	top: 18px;
+}
+#android{
+	position: absolute;
+	display: block;
+	width: 11px;
+	height: 12px;
+	left: 42px;
+	top: 18px;
+}
+.downleft:hover{
+	background: url(../images/2_03.png) no-repeat left;
+	background-position: -1px 1px;
+}
+.downright a{
+	float: left;
+	display: block;
+	width: 122px;
+	height: 32px;
+	background: url(../images/3_03.png) no-repeat 0px 6px;
+}
+.downright a:hover{
+	background: url(../images/a_03.png) no-repeat 0px 6px;
+}
+.b-r-c input{
+	width: 140px;
+	margin-left: 16px;
+}
+.footer{
+	width: 90%;
+	margin: 20px auto 0;
+}
+.footer i{
+	margin:0  5.5%;
+	font-size: 12px;
+	color:#7f7c79;
+}
+.footer a{
+	color: #7f7c79;
+}
+.footer a:hover{
+	color: #fff!important;
+}

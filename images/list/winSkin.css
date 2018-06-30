@@ -1,0 +1,102 @@
+/* CSS Document */
+/*......全局控制.....*/
+.live800_chatBox .live800_pop a,.live800_chat_nav a{cursor:pointer;text-decoration:none;hide-focus: expression(this.hideFocus=true);outline:none;}
+.live800_chatBox .live800_pop a:focus,.live800_chat_nav a:focus{outline:0;}
+.live800_chatBox .live800_pop img, .live800_chat_nav img { border:0; }
+#live800_plugin_switch { display:block; }.clear { clear:both; }
+.live800_layer{ background:#fff; position: absolute;top:0;right:0; bottom:0; left:0;*height:100%; z-index: 66;}
+.live800_loadingImg{background: url("images/loading.gif") center center no-repeat;width:100%;height:100%;zoom:1;}
+/*.........对话与功能导航栏.........*/
+.live800_item_icon, .live800_switch_Icon, .i-icon, .live800_notice s, .live800_icon_close,.live800_minimize,.live800_maximize{ background-image: url(images/toolbar.png); background-repeat: no-repeat; }
+.live800_chat_nav { position: fixed; z-index: 100000; height: 50px;background:rgba(255,255,255,0); color: #3E3E3E; text-align: left;_width:100%;_position: absolute;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));}
+.live800_bottom_left {left: 0; bottom: 0;}
+.live800_bottom_right {right: 0; bottom: 0;}
+.live800_top_left {}.live800_top_right {}
+.live800_innerChat_toolbar { height: 50px; float: right; right: 0; }/*定义左右*/
+.live800_innerChat_toolbar .live800_innerChat_bg { height: 50px; margin: 0;_position:relative;}
+.live800_innerChat_area { _position:absolute; zoom: 1; height:50px;width:344px;background: #25211E;}
+.live800_Custom { position: relative; zoom: 1; float: left; }
+.live800_toggle_area { cursor: pointer; height:25px; line-height: 25px; position: relative; zoom: 1; float: left; }
+.live800_item_icon { display: inline-block!important; width: 19px; height: 25px; line-height: 100px; overflow: hidden; zoom: 1; background-position: 0 -59px; vertical-align: middle; font-size: 0; margin-top: 0; }
+.live800_switch_Icon { display: inline-block; width: 17px; height: 17px; overflow: hidden; vertical-align: middle; margin: 0 5px; background-position: -47px -59px; }
+.live800_icon { display: inline-block; cursor: pointer; overflow: hidden; zoom: 1; vertical-align: middle; font-size: 0; line-height: 50px; }
+/*.........功能文字类按钮.........*/
+.live800_sidebar, .live800_item, .live800_icon_Button { position: relative; zoom: 1; float: left; }
+.live800_hyperlink { cursor: pointer; padding:0 10px 0 5px; border:1px solid #fff; line-height: 26px;display: inline-block; position: relative;z-index: 61; }
+.live800_hyperlink a { color:#000; }
+.live800_hyperlink a:hover { color:#F60; text-decoration:underline; }
+.live800_hyperlink .i-icon { position:absolute; right:2px; top:13px; width:5px; height:3px; background-position:-134px -59px; display:inline-block; vertical-align: middle; }
+.live800_shade{position: absolute;left:0;top:-1px;border-width:1px 0 2px 0; border-style:solid; border-color:#fff; display: block; width:100%;font-size:0;z-index: 1111;zoom:1;}
+.live800_dragMask{height:100%;width:100%;position:absolute;top:0;right:0;z-index:9999;background:url(images/s.gif);}
+.live800_item{border: solid transparent; border-width: 0 1px 1px; }
+.live800_funIcon{display: inline-block; height:16px; width:16px; font-size:0;}
+/*.........点击打开弹出框，表示选中..........*/
+.live800_popBox { background:#FFF; border: solid gray; border-width: 0 1px 1px; width:310px; height:180px; position:absolute; bottom:24px; right:-1px;border:1px solid #fff;overflow: hidden; zoom: 1; z-index: 60; }
+.live800_popTitle { height:25px; background:#E6E6E6; border-top: 2px solid #F16101; padding:0 5px 0 5px; }
+.live800_popTitle p { color:#333; font-weight:bold; line-height:25px; }
+.live800_pop_ft { position:absolute; right:10px; top:10px;}
+.live800_icon_close,.live800_minimize,.live800_maximize{display: inline-block; width:10px; height:10px; cursor: pointer; margin-left:6px;}
+.live800_icon_close{background-position:-94px -58px;}
+.live800_minimize{background-position:-94px -58px;}
+.live800_maximize{background-position:-94px -58px;}
+/*.........功能图标类按钮.........*/
+.doudou{float: left; position:relative; width: 43px; height: 50px; overflow:hidden;display:none; }
+.live800_chat_icon {width:100%; color:#E5DFD9; font-style: normal;text-decoration: none;font-size:12px;}
+/*.........在线对话图标状态.........*/
+.live800_icon_Button{height: 50px;width:100%;}
+.live800_button { cursor: pointer; line-height:50px;display:block;color:#fff;background-image: url(images/down.svg);background-repeat: no-repeat;background-position: 311px;background-size: 13px; }
+.live800_button_up{background-image: url(images/up.svg)}
+.live800_online { background-position:3px -21px; font-family: "FuturaLT-Book", "NotoSansCJKsc-DemiLight", "NotoSansCJKsc-Normal", "PingFangSC-Regular", "Hiragino Sans GB", "\5FAE\8F6F\96C5\9ED1", "Microsoft YaHei", sans-serif;  }
+.live800_busy { background-position:-16px 0; }
+.live800_leave { background-position:-62px -21px; }
+.live800_off_line { background-position:-64px 0; }
+/*.........消息提示.......*/
+.live800_notice { width:123px; height:61px; position:absolute;}
+.live800_notise_l{ right:0px; top:-68px; _bottom:27px;background-size:contain;}
+.live800_notise_r{ left:0px; top:-68px; _bottom:22px;}
+.live800_notice label { font-size:12px; color:#E5DFD9; font-weight:bold; line-height:20px; }
+/*.........对话窗口.......*/
+.live800_chatBox {position: fixed; width: 418px; bottom: auto;left: 50%; top: 50%;z-index:999999999; _position: absolute;_display:none;}
+.live800_chatBox {background: #F5F5F5;border: 1px solid #A6A6A6;}
+.live800_pop { background-color: #fff; }
+.live800_chat_cont{width: 100%; height:100%;position: absolute;background:#f5f5f5;left:0;top:0;z-index: 100000;}
+/*.........标题栏........*/
+.live800_popup_head { height: 50px;background: #25211E;position: relative; display: block;}
+.live800_status_free{ position: absolute; height: 20px; max-width: 60%; top: 15px; left: 14px; overflow: hidden;line-height: 16px}
+.live800_status_free i { display:inline-block; background-repeat:no-repeat; background-position:left center; height:14px!important;width: 17px !important; background-size: contain;margin-right: 5px;position: relative;top: 2px;}
+#logoinfo{color:#E5DFD9;font-size:12px; font-family: "FuturaLT-Book", "NotoSansCJKsc-Regular", "NotoSansCJKsc-Normal", "PingFangSC-Regular", "Hiragino Sans GB", "\5FAE\8F6F\96C5\9ED1", "Microsoft YaHei", sans-serif; }
+#inner_logo{width:17px !important;background:url(images/ICON_GG.svg);height:14px;display:inline-block;background-repeat:no-repeat;margin-left:14px;position: relative;top: 3px;margin-right: 5px;background-size: contain}
+.live800_headerBox{position: absolute; left: 80px;top:1px; height:26px;display: inline-block; _display:inline;}
+.live800_title_content { cursor: move; line-height: 26px; color: #fff; display: inline-block; _display:inline; }
+.live800_title_content font { cursor: move; line-height: 26px; color: #fff; font-family: Arial, SimSun; font-style: normal; font-variant: normal; font-stretch: normal; font-size:14px; font-weight: bold; }
+.live800_window_Icon { position: absolute; top: 6px; right: 4px;height:15px;}
+.live800_close_icon,.live800_minimize_icon,.live800_maximize_icon{background-image: url(images/innerChat.gif); background-repeat:no-repeat;position:absolute;cursor: pointer;}
+.live800_minimize_icon{ background-image: url(images/shrink.svg); right:40.5px;top:22px; height: 12px; width: 12px;}
+.live800_maximize_icon{ display:none;}
+.live800_maximize_icon.min{background-position: -21px -102px;}.live800_maximize_icon.max{background-position: -43px -102px;}
+.live800_close_icon {background-image: url(images/close.svg);background-size: 10px;right:10.5px; top:16px; height: 20px; width: 20px;background-position: center}
+.logoinfo{font-family: NotoSansCJKsc-Regular "微软雅黑";font-size: 12px;color: #C1B497;}
+/*.........内容区域........*/
+.live800_popup_main { margin: 0 auto; width:100%; padding: 0; clear: both;position:relative; height:372px; }
+.live800_talking_history { height: 100%; position: absolute; left: 1px; top: 0; right: 146px; z-index: 1000; }
+/*.........对话窗口历史记录.........*/
+.live800_talking_history { border-top:1px solid #8EACB6; }
+.live800_history_content { background-color: white; height: 152px; overflow-y: scroll; position: relative; word-wrap: break-word; width: 265px; _width: 262px; overflow-x: auto; }
+.live800_offPane { position: absolute; top: 0; right: 0; _top: 1px; width: 6px; height: 152px; background-color: #ECF5F8; display: block; }
+.live800_offPane span { }
+.live800_chatToolbar { height: 26px; background: url(images/toolbar.png) repeat-x 0 -25px; position: relative; }
+.live800_chatToolbar span { float: left; line-height: 24px; display: inline-block; height: 24px; width: 19px; margin-left: 10px; cursor: pointer; background-image:url(images/toolbar.png); background-repeat:no-repeat; }
+.live800_emoticon { background-position:-23px -157px; }
+.live800_chatInput { height: 55px; background-color: white; overflow: hidden; width: 100%; }
+.live800_chatInput textarea { width: 100%; height: 54px; border: 0; padding: 0; margin: 0; }
+.live800_chatFooter { height: 30px; border-top:1px solid #8EACB6; }
+.live800_shortcut_keyText { float: left; color: #333; margin-top:10px; margin-left:5px; display:inline-block; overflow: hidden; height:18px; }
+.live800_sendbut { background: transparent url(images/toolbar.png) no-repeat 0 -61px; color: #999; zoom: 1; display: inline-block; height: 18px; width: 72px; float: right; margin: 10px 5px 0 0; cursor: pointer; position: relative; vertical-align: middle; line-height: 18px; }
+.live800_send { display: inline-block; width: 59px; height: 18px; line-height: 18px; text-align: center; float: left; vertical-align: middle; }
+.live800_changesend { background: url(images/toolbar.png) no-repeat -139px -19px; display: inline-block; width: 12px; height: 18px; float: left; }
+.live800_sendbut ul { display:none;list-style: none; width: 130px; position: absolute; top: 22px; left: 0; border: 1px solid #6898C5; background-color: #F7FAFD; }
+.live800_info { position: absolute; right: 0; top: 0; z-index: 1000; border: 1px solid #8EACB6; height: 263px; width: 145px; overflow: hidden; background: url(images/loading.gif) no-repeat 50% 50% white; }
+.live800_handle { cursor:move; width: 5px; height: 5px; position: absolute; right: -1px; bottom: -1px; z-index: 7777;font-size:0;}
+.live800_handle_x { cursor:n-resize; width: 100%;height: 5px;position: absolute;left: 0;bottom: -1px;z-index: 6666;font-size:0;background: #fff;filter:Alpha(Opacity=0);opacity:0;}
+.live800_handle_y { cursor:w-resize; width: 5px;height: 100%;position: absolute;right: -1px;top: 0;z-index: 6666;font-size:0;background: #fff;filter:Alpha(Opacity=0);opacity:0;}
+.live800_item_checked {background: #fff; border: solid gray; border-width:0 1px 1px; margin-top: -2px;z-index: 61; }

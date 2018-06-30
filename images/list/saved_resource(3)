@@ -1,0 +1,720 @@
+$(function() {
+	window.isPc = !window.spice.hasTouch;
+	window.showFooterEmailErrorMsg = function(ele) {
+		$('.spice-no-error-style-input [data-errormsg]', ele).attr(
+				'placeholder', function() {
+					return $(this).attr('data-errormsg');
+				})
+	}
+	window.showFooterEmailMsg = function(ele) {
+		$('.spice-no-error-style-input [data-errormsg]', ele).attr(
+				'placeholder', function() {
+					return $(this).attr('data-msg');
+				})
+	}
+	var dialogHeaderAboutGucci = window.headerDialog.dialogHeaderAboutGucci;
+	$saveEmailInfoBtn = $(
+			'.spice-dialog-top-position-scroll-wrapper .e-save-info',
+			dialogHeaderAboutGucci.elem);
+
+	$(".spice-submit-button")
+			.on(
+					"tap",
+					function(e) {
+						var form = $("#emailForm")[0].elements;
+						var email = form.namedItem("email").value;
+						// 校验
+						if (!isNotNullOrEmpty(email)) {
+							$('.spice-input-submit').addClass('spice-error');
+							window
+									.showFooterEmailErrorMsg($('.spice-footer-right-content'));
+						} else {
+							if (checkEmail(email)) {
+								$('.spice-input-submit').removeClass(
+										'spice-error');
+								$("#emailSubscribe").attr("placeholder",
+										"电子邮件地址");
+								window
+										.showFooterEmailMsg($('.spice-footer-right-content'));
+								var json = {
+									'email' : email
+								};
+								var data = loxia.syncXhrPost(base
+										+ "/system/emailSubscribe", json);
+								if (data.result) {
+									dialogHeaderAboutGucci.elem.find(
+											"p[name='send-reply-email']").text(
+											email);
+									dialogHeaderAboutGucci.elem.find(
+											"span[name='send-email-info']")
+											.text(email);
+									setTimeout(function() {
+										dialogHeaderAboutGucci.show();
+									}, 200);
+									// 清除文本框数据
+									$("#emailForm")[0].reset();
+									e.stopPropagation();
+								} else {
+									$('.spice-input-submit').addClass(
+											'spice-error');
+									window
+											.showFooterEmailErrorMsg($('.spice-footer-right-content'));
+									e.stopPropagation();
+								}
+							} else {
+								$('.spice-input-submit')
+										.addClass('spice-error');
+								window
+										.showFooterEmailErrorMsg($('.spice-footer-right-content'));
+								e.stopPropagation();
+							}
+						}
+
+					})
+	// 年输入框离焦事件
+	$(".spice-ymd-select", dialogHeaderAboutGucci.elem).on("click", function() {
+		$('.spice-ymd-select').removeClass('spice-error');
+		$('.del-error-year').removeClass('spice-error');
+		$('.del-error-month').removeClass('spice-error');
+		$('.del-error-day').removeClass('spice-error');
+	});
+	// 联系电话输入框离焦事件
+	$(".spice-address-input-phonenum", dialogHeaderAboutGucci.elem)
+			.on(
+					"blur",
+					function() {
+						var phonenum = $.trim($(this).val());
+						if (isNotNullOrEmpty(phonenum)) {
+							var div = $(this).parents(".spice-group-list");
+							var phoneCode = "";
+							if (spice.hasTouch) {
+								phoneCode = $(div).find(".spice-dropdown-text")
+										.html().split(" ")[0];
+							} else {
+								phoneCode = $(div).find(".spice-calling-code")
+										.html();
+							}
+
+							var interCodePattern = /^\+\d{1,5}$/;
+							if (interCodePattern.test(phoneCode)) {
+								var isChina = phoneCode == "+86";
+								if (isChina) {
+									if (checkPhone(phonenum)) {
+										setValidMessage($(this), true, "");
+									} else {
+										setValidMessage(
+												$(this),
+												false,
+												loxia
+														.getLocaleMsg("myAccount.phonenum.formatError"));
+									}
+								} else {
+									var phonePattern = /^\d{1,20}$/;
+									if (phonePattern.test(phonenum)) {
+										setValidMessage($(this), true, "");
+									} else {
+										setValidMessage(
+												$(this),
+												false,
+												loxia
+														.getLocaleMsg("myAccount.phonenum.formatError"));
+									}
+								}
+							} else {
+								setValidMessage(
+										$(this),
+										false,
+										loxia
+												.getLocaleMsg("myAccount.phonenum.formatError"));
+							}
+						}
+					});
+	$saveEmailInfoBtn.on("tap",
+			function(e) {
+				var emailForm = $("#emailInfoForm")[0].elements;
+				var firstname = emailForm.namedItem("firstname").value;
+				var lastname = emailForm.namedItem("lastname").value;
+				var call = $("#emailInfoForm").find(
+						"span[name='send-email-call']").text();
+				var email = $("#emailInfoForm").find(
+						"span[name='send-email-info']").text();
+				var phonenum = emailForm.namedItem("phonenum").value;
+				var year = "";
+				var month = "";
+				var day = "";
+				var country = "";
+				if (window.isPc) {
+					country = $(".e-setting-nationality-dropdown").find("a")
+							.find(".spice-country-name").html();
+					year = $("#emailInfoForm").find(
+							"span[name='spice-email-year']").text();
+					month = $("#emailInfoForm").find(
+							"span[name='spice-email-month']").text();
+					day = $("#emailInfoForm").find(
+							"span[name='spice-email-day']").text();
+					if (call == "请选择") {
+						call = "";
+					}
+					if (year == "年") {
+						year = "";
+					}
+					if (month == "月") {
+						month = "";
+					}
+					if (day == "日") {
+						day = "";
+					}
+				} else {
+					country = $(".e-setting-nationality-dropdown").find("a")
+					.find(".spice-country-name").html();
+//					country = $(".e-setting-nationality-dropdown").find("a")
+//							.find(".spice-dropdown-text").html();
+					if (call == "请选择") {
+						call = "";
+					}
+					$(".e-spice-ymd-select").find("select").each(
+							function(index, element) {
+								if (index == 0) {
+									year = $(element).val();
+								}
+								if (index == 1) {
+									month = $(element).val();
+								}
+								if (index == 2) {
+									day = $(element).val();
+								}
+							});
+				}
+
+				var json = {
+					'email' : email,
+					'firstname' : firstname,
+					'lastname' : lastname,
+					'country' : country,
+					'call' : call,
+					'year' : year,
+					'month' : month,
+					'day' : day,
+					'phonenum' : phonenum
+				};
+				var data = loxia.syncXhrPost(base
+						+ "/system/emailSubscribeInfo", json);
+				if (data.result) {
+					dialogHeaderAboutGucci.hide();
+					// 清空内容
+					$("#emailForm")[0].reset();
+					$("#emailInfoForm")[0].reset();
+					var group = $('.spice-address-input-phonenum').parents(
+							".spice-form-group");
+					$(group).removeClass("spice-error");
+					$('.del-error-year').removeClass('spice-error');
+					$('.del-error-month').removeClass('spice-error');
+					$('.del-error-day').removeClass('spice-error');
+					initData();
+					e.stopPropagation();
+				} else {
+					e.stopPropagation();
+				}
+			});
+	$(".e-spice-dialog-icon-close").on(
+			"click",
+			function() {
+				// 清空内容
+				$("#emailForm")[0].reset();
+				$("#emailInfoForm")[0].reset();
+				var group = $('.spice-address-input-phonenum').parents(
+						".spice-form-group");
+				$(group).removeClass("spice-error");
+				initData();
+			});
+	function initData() {
+		var call = $("#call").val();
+		call = call == "" ? loxia.getLocaleMsg("checkout.please.choose") : call;
+		var country = $("#country").val();
+		country = country == "" ? "中国" : country;
+		var phonenumCode = $("#phonenumCode").val();
+		phonenumCode = phonenumCode == "" ? "+86" : phonenumCode;
+
+		var receiveMail = $("#receiveMail").val();
+		var year = $("#year").val();
+		var month = $("#month").val();
+		var day = $("#day").val();
+
+		$("span.select-call").html(call);
+
+		// pc版本
+		if (window.isPc) {
+			// 称呼下拉
+			$(".spice-dropdown-call ul").find("li").each(function(i, o) {
+				var val = $(o).attr("spice-data-value");
+				if (call == val) {
+					$(o).addClass("spice-current");
+					return false;
+				}
+			});
+
+			// 国籍
+			var countryFlag = true;
+			$(".e-setting-nationality-dropdown").find("li").removeClass(
+					"spice-current");
+			$(".e-setting-nationality-dropdown").find("li").each(
+					function(index, element) {
+						countryFlag = false;
+						var name = $(element).find(".spice-country-name")
+								.html();
+						if (country == name) {
+							$(this).addClass("spice-current");
+							var html = $(element).find("a").html()
+							$(".e-setting-nationality-dropdown").find(
+									".spice-dropdown-text").empty().html(html);
+							return false;
+						}
+					});
+
+			// 电话国家区号
+			$(".e-contact-number-dropdown").find("li").removeClass(
+					"spice-current");
+			$(".e-contact-number-dropdown").find("li").each(
+					function(index, element) {
+						countryFlag = false;
+						var code = $(element).find(".spice-calling-code")
+								.html();
+						if (phonenumCode == code) {
+							$(element).addClass("spice-current");
+							var html = $(element).find("a").html();
+							$(".e-contact-number-dropdown").find(
+									".spice-dropdown-btn").find(
+									'.spice-dropdown-text').html(html);
+							return false;
+						}
+					});
+
+			$('.e-contact-number-dropdown')
+					.on(
+							'spice.loadCountryDataEnd',
+							function() {
+								if (countryFlag) {
+									$(".e-setting-nationality-dropdown")
+											.find("li")
+											.each(
+													function(index, element) {
+														var name = $(element)
+																.find(
+																		".spice-country-name")
+																.html();
+														if (country == name) {
+															$(this)
+																	.addClass(
+																			"spice-current");
+															var html = $(
+																	element)
+																	.find("a")
+																	.html()
+															$(
+																	".e-setting-nationality-dropdown")
+																	.find(
+																			".spice-dropdown-text")
+																	.empty()
+																	.html(html);
+															return false;
+														}
+													});
+									$(".e-contact-number-dropdown")
+											.find("li")
+											.each(
+													function(index, element) {
+														var code = $(element)
+																.find(
+																		".spice-calling-code")
+																.html();
+														if (phonenumCode == code) {
+															$(element)
+																	.addClass(
+																			"spice-current");
+															var html = $(
+																	element)
+																	.find("a")
+																	.html();
+															console.log(html);
+															$(
+																	".e-contact-number-dropdown")
+																	.find(
+																			".spice-dropdown-btn")
+																	.find(
+																			'.spice-dropdown-text')
+																	.html(html);
+															return false;
+														}
+													});
+									countryFlag = false;
+								}
+							});
+
+			// 初始化生日
+			$(".spice-dropdown-item").find("ul").each(
+					function(index, element) {
+						if (index == 0) {
+							if (isNotNullOrEmpty(year)) {
+								$(element).find(
+										'[spice-data-value="' + year + '"]')
+										.trigger('tap');
+							} else {
+								$(element).find('li:nth-child(1)').trigger(
+										'tap');
+							}
+						}
+						if (index == 1) {
+							if (isNotNullOrEmpty(month)) {
+								$(element).find(
+										'[spice-data-value="' + month + '"]')
+										.trigger('tap');
+							} else {
+								$(element).find('li:nth-child(1)').trigger(
+										'tap');
+							}
+						}
+						if (index == 2) {
+							if (isNotNullOrEmpty(month)) {
+								$(element).find(
+										'[spice-data-value="' + day + '"]')
+										.trigger('tap');
+							} else {
+								$(element).find('li:nth-child(1)').trigger(
+										'tap');
+							}
+						}
+					});
+			$('.spice-ymd-select').removeClass('spice-error');
+			$('.del-error-year').removeClass('spice-error');
+			$('.del-error-month').removeClass('spice-error');
+			$('.del-error-day').removeClass('spice-error');
+		} else {
+			// 称呼下拉
+			$(".spice-dropdown-call").find("option").each(
+					function(index, element) {
+						var name = $(element).val();
+						if (call == name) {
+							$(element).attr("selected", true)
+							return false;
+						}
+					});
+
+			var countryFlag = true;
+			// 国籍
+			$(".e-setting-nationality-dropdown").find(".spice-dropdown-text")
+					.html(country);
+			$(".e-setting-nationality-dropdown").find("option").each(
+					function(index, element) {
+						countryFlag = false;
+						var name = $(element).text();
+						if (country == name) {
+							$(element).attr("selected", true)
+							return false;
+						}
+					});
+			// 联系电话国家
+			$(".e-contact-number-dropdown").find("option").each(
+					function(index, element) {
+						countryFlag = false;
+						var name = $(element).text();
+						var code = name.split(" ")[0]
+						if (code == phonenumCode) {
+							$(element).attr("selected", true)
+							var html = $(element).html();
+							$(".e-contact-number-dropdown").find(
+									".spice-dropdown-text").html(html);
+							return false;
+						}
+					});
+			$('.e-contact-number-dropdown')
+					.on(
+							'spice.loadCountryDataEnd',
+							function() {
+								if (countryFlag) {
+									$(".e-contact-number-dropdown")
+											.find("option")
+											.each(
+													function(index, element) {
+														var name = $(element)
+																.text();
+														var code = name
+																.split(" ")[0]
+														if (code == phonenumCode) {
+															$(element).attr(
+																	"selected",
+																	true)
+															var html = $(
+																	element)
+																	.html();
+															$(
+																	".e-contact-number-dropdown")
+																	.find(
+																			".spice-dropdown-text")
+																	.html(html);
+															return false;
+														}
+													});
+									$(".e-setting-nationality-dropdown").find(
+											"option").each(
+											function(index, element) {
+												var name = $(element).text();
+												if (country == name) {
+													$(element).attr("selected",
+															true)
+													return false;
+												}
+											});
+									countryFlag = false;
+								}
+							});
+
+			// 初始化生日
+			$(".e-spice-ymd-select").find("select").each(
+					function(index, element) {
+						if (index == 0) {
+							if (isNotNullOrEmpty(year)) {
+								$(element).val(year);
+							} else {
+								$(element).val('');
+							}
+						}
+						if (index == 1) {
+							if (isNotNullOrEmpty(month)) {
+								$(element).val(month);
+							} else {
+								$(element).val('');
+							}
+						}
+						if (index == 2) {
+							if (isNotNullOrEmpty(day)) {
+								$(element).val(day);
+							} else {
+								$(element).val('');
+							}
+						}
+						$(element).change();
+					});
+			$('.spice-ymd-select').removeClass('spice-error');
+			$('.del-error-year').removeClass('spice-error');
+			$('.del-error-month').removeClass('spice-error');
+			$('.del-error-day').removeClass('spice-error');
+		}
+	}
+	
+	var citySelectFooter = new window.commonEffectFn.cityselecteffect(spice.hasTouch ? ".e-footer-city-select .spice-semi-simulation" : ".e-footer-city-select .spice-special", {
+		defaultText: ['请选择省', '请选择市', ' '],
+		defaultDataStart: '1',
+		// defaultDataObj: data,
+		defaultDataObj: window.areaStoreLocator,
+		defaultError: false
+	})
+//	console.log('citySelectFooter:',citySelectFooter)
+	!spice.hasTouch && citySelectFooter.elem.on('spice.citySelect-selectEnd', function(e, o){
+		var stateSpan = citySelectFooter.getSelectVal()[0].split('-')[1];
+	    var townSpan = citySelectFooter.getSelectVal()[1].split('-')[1];
+		if(townSpan!="" && townSpan!="请选择市"){
+			window.location.href=base+"/store-finder?state="+stateSpan+"&town="+townSpan;
+		}
+	})
+	
+	
+	
+	spice.hasTouch && $(".e-footer-city-select").find('select')
+    .on('change',function(e, data){
+      var $dom = $(e.target),
+     	  _grandPa = $dom.parents(".e-footer-city-select"),
+     	  _father1 = _grandPa.find(".spice-dropdown-item").eq(0),
+     	  _father2 = _grandPa.find(".spice-dropdown-item").eq(1),
+     	  $dom1 = _father1.find("select"),
+     	  $dom2 = _father2.find("select"),
+          value = $dom.val(),
+          $dom1Value = $dom1.find("option:selected").text(),
+          $dom2Value = $dom2.find("option:selected").text()
+
+//            console.log($dom1Value);
+//            console.log($dom2Value);
+        if($dom2Value!="" && $dom2Value!="请选择市"){
+			window.location.href=base+"/store-finder?state="+$dom1Value+"&town="+$dom2Value;
+		}
+            
+    })
+
+
+
+
+	
+});
+$(document).ready(function(){
+	var dialogHeaderCustomerService=window.headerDialog.dialogHeaderCustomerService;
+    var dialogHeaderSendEmail=window.headerDialog.dialogHeaderSendEmail;
+    var dialogHeaderEmailSuccess=window.headerDialog.dialogHeaderEmailSuccess;
+    $sendSuccessBtn = $('.spice-dialog-header-send-email-slot .e-send-success');
+	$successSureBtn = $('.spice-dialog-header-email-slot .e-email-success-sure');
+	//发送电子邮件弹层
+	$(".e-send-email-btn,.e-send-email-btn-contact-us").on("tap",function(){    
+	    dialogHeaderCustomerService.hide();
+	    //清空弹层内容
+	    $("#common-dialog-header-send-email-form")[0].reset();	
+	    //重置下拉框
+	    $("#send-email-title").html("请选择");
+	    $('div.spice-dropdown-menu-emailtheme').find('li.spice-current').removeClass('spice-current').siblings("li[spice-data-value='请选择']").addClass('spice-current')
+	    $("#send-email-call").html("请选择");
+	    $('div.spice-dropdown-menu-call').find('li.spice-current').removeClass('spice-current').siblings("li[spice-data-value='请选择']").addClass('spice-current')
+	    //清空报错样式
+	    $("#common-dialog-header-send-email-form").find("div.spice-error").removeClass("spice-error");
+	    dialogHeaderSendEmail.show();
+	    var mailfrom = $(this).attr("mail-from");
+	    var mailfromType = $(this).attr("mail-from-type");
+	    $sendSuccessBtn.attr("mail-from",mailfrom);
+	    $sendSuccessBtn.attr("mail-from-type",mailfromType);
+	}); 
+	
+	//校验
+	$("#send-email-email").on("blur", function(){
+		var email=$.trim($(this).val());
+		if(!isNotNullOrEmpty(email)){
+			setValidMessage($(this), false, loxia.getLocaleMsg("contactus.sendemail.email.isnull"));
+		}else{
+			if(checkEmail(email)){
+				setValidMessage($(this), true,"");
+			}else{
+				setValidMessage($(this), false, loxia.getLocaleMsg("contactus.sendemail.email.error"));
+			}
+		}
+	});
+	$("#spice-advice-msg").on("blur", function(){
+		var msg=$.trim($(this).val());
+		if(isNotNullOrEmpty(msg)){
+			setValidMessage($(this), true,"");
+		}else{
+			setValidMessage($(this), false, loxia.getLocaleMsg("contactus.sendemail.msg.error"));
+		}
+	});
+//	$("#send-email-firstname").on("blur", function(){
+//		var firstname=$.trim($(this).val());
+//		if(isNotNullOrEmpty(firstname)){
+//			setValidMessage($(this), true,"");
+//		}else{
+//			setValidMessage($(this), false, loxia.getLocaleMsg("contactus.sendemail.firstname.error"));
+//		}
+//	});
+//	$("#send-email-lastname").on("blur", function(){
+//		var lastname=$.trim($(this).val());
+//		if(isNotNullOrEmpty(lastname)){
+//			setValidMessage($(this), true,"");
+//		}else{
+//			setValidMessage($(this), false, loxia.getLocaleMsg("contactus.sendemail.lastname.error"));
+//		}
+//	});
+	$("div.spice-dialog-paragraph .spice-form-group-theme .e-dropdown").on("spice.dropdown-menu-tap",function(e,o){
+		
+		var option=o.curMenu[0];
+		var title=$(option).attr("spice-data-value");
+		//console.log(title);
+		
+		//var title = $(this).find("#send-email-title").text();
+		if( title!="请选择" ){
+			//console.log("true");
+			setValidMessage($(this), true,"");
+		}else{
+			//alert("false");
+			//console.log("false");
+			setValidMessage($(this), false, loxia.getLocaleMsg("contactus.sendemail.title.error"));
+		}
+			
+	});
+	
+	//发送电子邮件
+	//$(".e-send-success").on("tap",function(){    
+	$sendSuccessBtn.on("tap",function(e){    
+		
+	    var form = $("#common-dialog-header-send-email-form")[0].elements;
+	    var firstname = form.namedItem("firstname").value;
+	    var lastname = form.namedItem("lastname").value;
+	    var call = $("#common-dialog-header-send-email-form").find("span[name='send-email-call']").text();
+	    var email = form.namedItem("email").value;
+	    var phonenum = form.namedItem("phonenum").value;
+	    var title = $("#common-dialog-header-send-email-form").find("span[name='send-email-title']").text();
+	    var advicemsg = form.namedItem("spice-advice-msg").value;
+	    var mailfrom = $(this).attr("mail-from");
+	    var mailfromType = $(this).attr("mail-from-type");
+	    if(call =="请选择"){
+	    	call="";
+	    }
+	    if(title =="请选择"){
+	    	title="";
+	    }
+	    $("#send-email-email").trigger("blur");
+		//$("#send-email-firstname").trigger("blur");
+		//$("#send-email-lastname").trigger("blur");
+		$("#spice-advice-msg").trigger("blur");
+		if( title!="" ){
+			setValidMessage($("div.spice-dialog-paragraph .spice-form-group-theme .e-dropdown"), true,"");
+		}else{
+			setValidMessage($("div.spice-dialog-paragraph .spice-form-group-theme .e-dropdown"), false, loxia.getLocaleMsg("contactus.sendemail.title.error"));
+		}
+		
+		var emailCheck=$("#send-email-email").attr("check");
+		//var firstnameCheck=$("#send-email-firstname").attr("check");
+		//var lastnameCheck=$("#send-email-lastname").attr("check");
+		var titleCheck=$("div.spice-dialog-paragraph .spice-form-group-theme .e-dropdown").attr("check");
+		var msgCheck=$("#spice-advice-msg").attr("check");
+	    
+		if(emailCheck=="true"&&msgCheck=="true"&&titleCheck=="true"){
+		    
+		    dialogHeaderEmailSuccess.elem.find("span[name='send-success-firstname']").text(firstname);
+		    if(call!="" && call!=null){
+			    dialogHeaderEmailSuccess.elem.find("span[name='send-success-call']").text(call);
+		    }else{
+			    dialogHeaderEmailSuccess.elem.find("span[name='send-success-call']").text(lastname);
+		    }
+		    dialogHeaderEmailSuccess.elem.find("span[name='send-success-reply-email']").text(email);
+		    dialogHeaderEmailSuccess.elem.find("span[name='send-success-phonenum']").text(phonenum);
+		    dialogHeaderEmailSuccess.elem.find("span[name='send-success-title']").text(title);
+		    dialogHeaderEmailSuccess.elem.find("span[name='send-success-suggest']").text(advicemsg);
+		    $successSureBtn.attr("mail-from",mailfrom);
+		    $successSureBtn.attr("mail-from-type",mailfromType);
+		    
+		    var json  = {'firstname':firstname, 'lastname':lastname, 'call':call, 'email':email, 'phonenum':phonenum, 'title':title, 'advicemsg':advicemsg, 'mailfrom':mailfrom, 'mailfromType':mailfromType};
+			var data = loxia.syncXhrPost(base + "/contactus/sendemail", json);
+			if(data.result){
+				dialogHeaderSendEmail.hide()
+		        dialogHeaderEmailSuccess.show()
+		        e.stopPropagation();
+			}else{
+				dialogHeaderSendEmail.hide()
+		        dialogHeaderEmailSuccess.show()
+		        e.stopPropagation();
+			}
+		    
+		    
+			
+		}else{
+			console.log("return");
+			e.stopPropagation();
+			return;
+		}
+	    
+	}); 
+	
+	
+	//确定发送邮件
+	$successSureBtn.on("tap",function(e){  
+		window.headerDialog.dialogHeaderEmailSuccess.hide()
+		e.stopPropagation();
+	    
+	}); 
+	
+	$('.spice-dropwdown-simulation select').on('change',function(){
+		var code=$(this).val();
+		if (isNotNullOrEmpty(code)) {
+			$(this).parents(".spice-form-group").removeClass("spice-error");
+		}
+	})
+
+	var dialogHeaderSalesLogin = window.headerDialog.dialogHeaderSalesLogin;
+		
+	$('.spice-sales-consultant-edit').off("tap").on("tap", function() {
+		dialogHeaderSalesLogin.show();
+	});
+});

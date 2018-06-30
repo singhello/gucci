@@ -158,7 +158,7 @@ input{outline:none;}
 .bg-favicon{
 	width: 49px;
 	height: 49px;
-	background: url(../index/images/favicon.png) no-repeat;
+	background: url(../images/favicon.png) no-repeat;
 	background-size: 100% 100%;
 	position: absolute;
 	left: 48%;
@@ -279,6 +279,8 @@ input{outline:none;}
 }
 .product-glasses-pic img{
 	margin:0 auto;
+	position: relative;
+	top: 0;
 }
 .pro-right{
 	width: 180px;
@@ -605,5 +607,160 @@ input{outline:none;}
 .footer a:hover{
 	color: #fff!important;
 }
+
+/*js操作*/
+/*中国遮罩*/
+.inter-mark{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 10000;
+	background: rgba(0,0,0,.5);
+	margin: 0 auto;
+	display: none;
+}
+.area-select{
+	width: 800px;
+	height: 564px;
+	background: #fff;
+	margin:125px auto;
+	opacity: 1;
+}
+.area-select-title{
+	width: 100%;
+	height: 55px;
+	background: #ccc;
+	padding-top: 30px;
+}
+.area-select-title h3{
+	font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+    color: #1b1b1b;
+    margin-left: 30px;
+	font-weight: 900;
+}
+.area-select-title p{
+	margin-left: 30px;
+	font-size: 12px;
+	color: #999;
+}
+.area-close{
+	float: right;
+	font-size: 60px;
+	color: #999;
+	margin-top: -85px;
+}
+.area-con-top{
+	padding-left: 60px;
+}
+.area-con-top h4{
+	font-size: 14px;
+	color: #000000;
+	padding: 10px 0;
+}
+.area-con-top h5 span{
+	font-size: 12px;
+	color: #1B1B1B;
+}
+.area-con-top h5 span:nth-of-type(2){
+	padding-left: 96px;
+}
+.area-jianada{
+	width: 110px;
+	padding: 9px 15px 0;
+}
+.area-jianada a{
+	font-size: 12px;
+	color: #999;
+}
+.area-jianada p{
+	margin-top:16px ;
+}
+/*下拉菜单*/
+#menu{
+	width: 98%;
+	min-height: 372px;
+	_height:372px;
+	position: fixed;
+	top: 120px;
+	z-index: 101;
+	background: rgba(255,255,255,.9);
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	display: none;
+}
+#menu a{
+	display: block;
+	width: 100%;
+	color: #716d6d;
+	font-size: 12px;
+}
+#menu .menu-0{
+	display: none;
+}
+#menu .menu-0 ul{
+	padding-top: 20px;
+	margin: 0 25%;
+}
+#menu .menu-0 li{
+	font-size: 12px;
+	width: 25%;
+	float: left;
+}
+.menu-0 p{
+	color: #000000;
+	margin-bottom: 22px;
+	font-weight: 600;
+}
+#menu .menu-0 li a{
+	display: block;
+	margin: 10px 0;
+}
+#menu .menu-0 li:nth-child(2){
+	background: url(../images/boder-O_03.png) no-repeat right;
+	height: 300px;
+}
+
+.menu-1{
+	display: none;
+}
+.menu-1 ul{
+	width: 90%;
+	margin: 0 auto;
+}
+.menu-1 li{
+	width: 16.6%;
+	float: left;
+	margin-top: 20px;
+}
+#menu p{
+	font-size: 12px;
+	font-weight: 600;
+	color: #000000;
+	margin-bottom: 22px;
+}
+.menu-1 li a{
+	margin: 20px 0;
+}
+.slider{
+	position: relative;
+}
+.slider img{
+	position: absolute;
+}
+
+
+
+
+
+
+
+
+
 
 
