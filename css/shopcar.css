@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*banner*/
 .banner-box {
   height: 422px;
@@ -17,51 +18,123 @@
   position: absolute;
   top: 69px; }
 
-.banner-box .banner-left {
-  position: absolute;
-  top: 82px;
-  left: 47px; }
-  .banner-box .banner-left h2 {
-    font-size: 28px;
-    color: #fff;
-    margin-bottom: 39px; }
-  .banner-box .banner-left .go-on {
-    display: block;
-    width: 100%;
-    height: 40px;
-    background: #1B1B1B;
-    color: #E5DFD9;
-    text-align: center;
-    line-height: 40px; }
-  .banner-box .banner-left .go-on:hover {
-    background: #333333; }
-.banner-box .banner-right {
-  width: 345px;
-  height: 430px;
-  background: #fff;
-  position: absolute;
-  top: 35px;
-  right: 26px;
-  padding: 15px; }
-  .banner-box .banner-right h4 {
-    padding: 23px 0 21px;
-    text-align: center;
-    color: #4B4B4B;
-    font-size: 12px; }
-  .banner-box .banner-right .help {
-    width: 100%;
-    height: 59px; }
-    .banner-box .banner-right .help .help-main {
+.banner-con {
+  position: relative;
+  min-height: 500px;
+  _height: 500px;
+  top: 120px; }
+  .banner-con .banner-left {
+    position: absolute;
+    top: 82px;
+    left: 47px; }
+    .banner-con .banner-left h2 {
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 39px; }
+    .banner-con .banner-left .go-on {
       display: block;
-      font-size: 12px;
-      cursor: default;
-      color: #999999;
-      padding: 24px 25px 22px;
-      line-height: 12px;
-      border-top: 1px solid #C0C0C0; }
-      .banner-box .banner-right .help .help-main i {
-        float: right;
-        font-size: 24px;
-        font-weight: 600; }
+      width: 100%;
+      height: 40px;
+      background: #1B1B1B;
+      color: #E5DFD9;
+      text-align: center;
+      line-height: 40px; }
+    .banner-con .banner-left .go-on:hover {
+      background: #333333; }
+  .banner-con .banner-right {
+    width: 345px;
+    background: #fff;
+    float: right;
+    position: relative;
+    margin-top: 35px;
+    right: 26px;
+    padding: 15px; }
+    .banner-con .banner-right h4 {
+      padding: 5px 0 21px;
+      text-align: center;
+      color: #4B4B4B;
+      font-size: 12px; }
+    .banner-con .banner-right .help {
+      width: 100%; }
+      .banner-con .banner-right .help .help-main {
+        display: block;
+        font-size: 12px;
+        cursor: default;
+        color: #999999;
+        padding: 24px 25px 22px;
+        line-height: 12px;
+        border-top: 1px solid #C0C0C0; }
+        .banner-con .banner-right .help .help-main i {
+          float: right;
+          font-size: 24px;
+          font-weight: 600; }
+      .banner-con .banner-right .help .help-hidden {
+        display: none; }
+        .banner-con .banner-right .help .help-hidden a:nth-of-type(2) {
+          cursor: default; }
+        .banner-con .banner-right .help .help-hidden a {
+          display: block;
+          font-size: 12px;
+          color: #999;
+          margin-left: 20px;
+          margin-bottom: 10px;
+          line-height: 100%; }
+          .banner-con .banner-right .help .help-hidden a i {
+            font-size: 12px;
+            margin-right: 10px; }
+        .banner-con .banner-right .help .help-hidden .p-title {
+          font-style: italic;
+          margin-bottom: 10px;
+          padding-left: 18px; }
+        .banner-con .banner-right .help .help-hidden p {
+          font-size: 12px;
+          color: #999; }
+          .banner-con .banner-right .help .help-hidden p a {
+            cursor: default;
+            display: inline-block; }
+            .banner-con .banner-right .help .help-hidden p a img {
+              display: inline-block; }
+          .banner-con .banner-right .help .help-hidden p .exchange {
+            margin-left: 0;
+            cursor: pointer;
+            color: #1B1B1B; }
+          .banner-con .banner-right .help .help-hidden p .exchange:hover {
+            color: #999; }
+      .banner-con .banner-right .help .help-block {
+        display: block; }
+      .banner-con .banner-right .help .free-pack {
+        padding-left: 27px; }
+
+.shop-cart {
+  position: relative;
+  height: 296px;
+  background: #fff;
+  top: 200px;
+  text-align: center; }
+  .shop-cart h3 {
+    padding-top: 82px;
+    font-size: 22px;
+    color: #1B1B1B; }
+  .shop-cart p {
+    margin-top: 38px;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px; }
+    .shop-cart p a {
+      font-weight: 100;
+      text-decoration: none; }
+  .shop-cart a {
+    font-weight: 600;
+    font-size: 12px;
+    color: #999;
+    text-decoration: underline; }
+  .shop-cart a:hover {
+    text-decoration: underline; }
+
+.bottom-box {
+  position: relative;
+  top: 200px; }
+
+/*产品收藏*/
 
 /*# sourceMappingURL=shopcar.css.map */

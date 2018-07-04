@@ -59,6 +59,7 @@ input{outline:none;}
 }
 #top-right a{
 	color: #e5dfd9;
+	padding-bottom: 20px;
 }
 #top-right a:hover{
 	color: white;
@@ -73,8 +74,8 @@ input{outline:none;}
 	color:#fff;
 }
 #top-right #fangdajing{
-	width: 20px;
-	height: 20px;
+	width: 27px;
+	height: 5px;
 	font-size: 12px;
 	display: inline-block;
 	text-align: center;
@@ -127,7 +128,7 @@ input{outline:none;}
 #banner-box{
 	height: 117px;
 	position: absolute;
-	left: 0;top: 0;
+	left: 0;top: 360px;
 	right: 0;bottom: 0;
 	margin:auto;
 }
@@ -151,7 +152,7 @@ input{outline:none;}
 	font-size: 14px;
 	color: white;
 	position: absolute;
-	bottom: 20px;
+	bottom: -190px;
 	right: 20px;
 }
 /*product*/
@@ -170,7 +171,7 @@ input{outline:none;}
 	width: 100%;
 	/*position: relative;*/
 	background: #fff;
-	margin-top: -581px;
+	margin-top: -400px;
 	padding-bottom: 16px;
 }
 #shose{
@@ -460,6 +461,7 @@ input{outline:none;}
 	color: #fff;
 }
 /*bottom*/
+/*bottom*/
 .bottom-box{
 	width: 100%;
 	background: #1b1b1b;
@@ -530,6 +532,21 @@ input{outline:none;}
 }
 .bottom-con p a:hover{
 	color: #FFF;
+}
+.bottom-con p a:hover i{
+	color: #FFF;
+}
+.bottom-con p a:hover .icon-weixin{
+	color: green;
+}
+.bottom-con p a:hover .icon-weibo{
+	color: red;
+}
+.bottom-con p a:hover .icon-youku{
+	color: blue;
+}
+.footer .icon-guohui{
+	color: red;
 }
 .b-r-b{
 	margin-top: 88px;
@@ -606,8 +623,7 @@ input{outline:none;}
 }
 .footer a:hover{
 	color: #fff!important;
-}
-
+} 
 /*js操作*/
 /*中国遮罩*/
 .inter-mark{
@@ -679,11 +695,180 @@ input{outline:none;}
 .area-jianada p{
 	margin-top:16px ;
 }
+#area-right-box{
+	margin: -62px 0 0 142px;
+	padding-bottom: 20px;
+}
+.area-ll,.area-lc,.area-lcc,.area-lr{
+	float: left;
+}
+#area-right-box a{
+	display: block;
+	font-size: 12px;
+	color: #999;
+	margin-top:16px;
+	margin-right: 90px;
+}
+.area-con-bottom{
+	width: 100%;
+	height: 200px;
+	border-top: 1px solid #C0C0C0;
+	margin-top: 20px;
+}
+.area-con-bottom div{
+	float: left;
+	margin-left: 66px;
+	padding-top: 20px;
+	font-size: 12px;
+	color: #1B1B1B;
+}
+.area-con-bottom div a{
+	display: block;
+	margin-top: 20px;
+	font-size: 12px;
+	color: #999;
+}
+
+
+
+
+
+/*登录划过效果*/
+.sign-in{
+	width: 300px;
+	height: 270px;
+	background: #fff;
+	position: fixed;
+	z-index: 100000;
+	top: 50px;
+	right: 20px;
+	border: 1px solid #000;
+	display: none;
+}
+.sign-in .sanjiao{
+	right: 188px;
+}
+.sign-in p{
+	font-size: 12px;
+	margin: 24px 14px 14px;
+	color: #1B1B1B;
+	font-weight: 600;
+}
+.sign-in ul li{
+	font-size: 11px;
+    color: #717171;
+    padding-left: 10px;
+    margin: 21px 14px;
+    background: url(../images/d-list-bg_03.png) no-repeat left center;
+}
+.sign-in a{
+	display: block;
+	width: 272px;
+	height: 40px;
+	background: #1B1B1B;
+	margin: 10px 0 10px 14px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+}
+.sign:hover{
+	background-color: #666666;
+}
+.sign-in .register{
+	width: 268px;
+	height: 36px;
+	color: #000;
+	background: #fff;
+	border: 2px solid #000000;
+}
+.sign-in .register:hover{
+	border-color: #999;
+	color: #999;
+}
+
+
+/*搜索框效果*/
+#search-hidden{
+	position: fixed;
+	width: 0px;
+	height: 25px;
+	top: 20px;
+	right: 60px;
+	z-index: 1000;
+	border: 0;
+}
+/*心愿单划过效果*/
+.drem-list{
+	width: 245px;
+	height: 97px;
+	background: #fff;
+	position: fixed;
+	top: 51px;
+	right: 155px;
+	z-index: 1000;
+	text-align: center;
+	display: none;
+}
+.drem-list .sanjiao{
+	right: 23px;
+}
+.drem-list h3{
+	font-size: 16px;
+	color: #1B1B1B;
+	font-weight: 600;
+	padding: 15px 0 10px;
+	border-bottom: 1px solid #ccc;
+}
+.drem-list p{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #999;
+}
+/*心愿单划过效果*/
+.shop-dai{
+	width: 245px;
+	height: 97px;
+	background: #fff;
+	position: fixed;
+	top: 51px;
+	right: 115px;
+	z-index: 1000;
+	text-align: center;
+	display: none;
+}
+.shop-dai h3{
+	font-size: 16px;
+	color: #1B1B1B;
+	font-weight: 600;
+	padding: 15px 0 10px;
+	border-bottom: 1px solid #ccc;
+}
+.shop-dai p{
+	margin-top: 10px;
+	font-size: 14px;
+	color: #999;
+}
+/*三角形*/
+.sanjiao{
+	width: 0;
+	height: 0;
+	border: 10px solid #fff;
+	border-right: 10px solid rgba(0,0,0,0);
+	border-top: 10px solid rgba(0,0,0,0);
+	border-left: 10px solid rgba(0,0,0,0);
+	position: absolute;
+	top: -20px;
+	right: 3px;
+	z-index: 1000;
+}
+
+
+
+
 /*下拉菜单*/
-#menu{
+#menu--0{
 	width: 98%;
-	min-height: 372px;
-	_height:372px;
 	position: fixed;
 	top: 120px;
 	z-index: 101;
@@ -694,20 +879,20 @@ input{outline:none;}
 	text-align: center;
 	display: none;
 }
-#menu a{
+#menu--0 a{
 	display: block;
 	width: 100%;
 	color: #716d6d;
 	font-size: 12px;
 }
-#menu .menu-0{
-	display: none;
+#menu--0 .menu-0{
+	/*display: none;*/
 }
-#menu .menu-0 ul{
+#menu--0 .menu-0 ul{
 	padding-top: 20px;
 	margin: 0 25%;
 }
-#menu .menu-0 li{
+#menu--0 .menu-0 li{
 	font-size: 12px;
 	width: 25%;
 	float: left;
@@ -717,28 +902,36 @@ input{outline:none;}
 	margin-bottom: 22px;
 	font-weight: 600;
 }
-#menu .menu-0 li a{
+#menu--0 .menu-0 li a{
 	display: block;
 	margin: 10px 0;
 }
-#menu .menu-0 li:nth-child(2){
+#menu--0 .menu-0 li:nth-child(2){
 	background: url(../images/boder-O_03.png) no-repeat right;
 	height: 300px;
 }
-
-.menu-1{
+#menu--1,#menu--2,#menu--3,#menu--4,#menu--5,#menu--6{
+	width: 98%;
+	position: fixed;
+	top: 120px;
+	z-index: 101;
+	background: rgba(255,255,255,0.9);
+	left: 0;
+	right: 0;
+	margin: auto;
 	display: none;
+	padding-bottom: 20px;
 }
 .menu-1 ul{
 	width: 90%;
 	margin: 0 auto;
 }
 .menu-1 li{
-	width: 16.6%;
+	padding-left: 90px;
 	float: left;
 	margin-top: 20px;
 }
-#menu p{
+#menu--0 p{
 	font-size: 12px;
 	font-weight: 600;
 	color: #000000;
@@ -747,13 +940,50 @@ input{outline:none;}
 .menu-1 li a{
 	margin: 20px 0;
 }
+
+#menu--1 a,#menu--2 a,#menu--3 a,#menu--4 a,#menu--5 a,#menu--6 a{
+	display: block;
+	width: 100%;
+	color: #716d6d;
+	font-size: 12px;
+	margin: 10px 0;
+}
+#menu--1 p,#menu--2 p,#menu--3 p,#menu--4 p,#menu--5 p,#menu--6 p{
+	font-size: 12px;
+	font-weight: 600;
+	color: #000000;
+	margin-bottom: 22px;
+}
+#menu--1 li,#menu--2 li,#menu--3 li,#menu--4 li,#menu--5 li,#menu--6 li{
+	float: left;
+	padding-left: 90px;
+	margin-top: 20px;
+}
+#menu--3 ul{
+	margin-left: 270px;
+}
+#menu--3 li{
+	padding-left: 150px;
+}
+#menu--4 ul{
+	margin-left: 150px;
+}
+#menu--5{
+	padding-bottom: 50px;
+}
+#menu--5 ul{
+	margin-left: 480px;
+}
+#menu--6 ul{
+	margin-left: 160px;
+}
+/*轮播图*/
 .slider{
 	position: relative;
 }
 .slider img{
 	position: absolute;
 }
-
 
 
 

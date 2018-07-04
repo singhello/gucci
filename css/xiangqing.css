@@ -1,0 +1,212 @@
+@charset "UTF-8";
+.bottom-box {
+  position: absolute;
+  top: 1137px;
+}
+
+.xq-box {
+  width: 98%;
+  margin: 130px auto 0;
+  position: relative;
+  padding: 50px 0;
+  background: #e7e7e7;
+}
+.xq-box .xq-left {
+  position: absolute;
+  top: 210px;
+  left: 20px;
+}
+.xq-box .xq-left a {
+  font-size: 12px;
+  color: #999;
+}
+.xq-box .xq-left .zheng {
+  width: 40px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #000;
+  text-align: center;
+}
+.xq-box .xq-left .zheng a {
+  color: #000000;
+}
+.xq-box .xq-left .fan {
+  text-align: center;
+  margin-top: 10px;
+}
+.xq-box .xq-center {
+  margin-left: 50%;
+  transform: translate(-210px, 0);
+}
+.xq-box .xq-center img:hover {
+  cursor: crosshair;
+}
+.xq-box .xq-right {
+  position: absolute;
+  right: 210px;
+  top: 50px;
+}
+.xq-box .xq-right .pro-title {
+  font-size: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  padding: 0 30px;
+  color: #313131;
+  width: 100%;
+  word-wrap: break-word;
+}
+.xq-box .xq-right .pro-title a {
+  font-weight: 900;
+  color: #000;
+}
+.xq-box .xq-right .pro-title span {
+  padding: 0 20px;
+}
+.xq-box .xq-right .xilie {
+  font-size: 12px;
+  width: 100%;
+  color: #313131;
+  text-align: center;
+  padding-bottom: 30px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #C8C6C5;
+}
+.xq-box .xq-right .heart-list {
+  padding: 11px 0 14px;
+  font-size: 12px;
+  border-bottom: 1px solid #C8C6C5;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.xq-box .xq-right .heart-list a {
+  color: #999;
+  font-size: 12px;
+}
+.xq-box .xq-right .heart-list a i {
+  margin-right: 10px;
+}
+.xq-box .xq-right .heart-list a i:hover {
+  color: #000;
+}
+.xq-box .xq-right .heart-list a:nth-of-type(1) {
+  padding-right: 18px;
+  margin-right: 18px;
+  border-right: 1px solid #C8C6C5;
+}
+.xq-box .xq-right .heart-list a:hover {
+  color: #666;
+}
+.xq-box .xq-right .share {
+  font-size: 12px;
+  color: #999999;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #C8C6C5;
+  text-align: center;
+  position: relative;
+}
+.xq-box .xq-right .share a {
+  font-size: 16px;
+  line-height: 1;
+  color: #999;
+  margin-left: 10px;
+}
+.xq-box .xq-right .share .icon-weixin:hover {
+  color: limegreen;
+}
+.xq-box .xq-right .share .icon-weibo:hover {
+  color: red;
+}
+.xq-box .xq-right .pro-about {
+  margin-top: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.xq-box .xq-right .pro-about a {
+  font-size: 12px;
+  color: #999;
+  line-height: 12px;
+}
+
+.weixin-box {
+  width: 222px;
+  height: 108px;
+  padding: 15px;
+  background: #fff;
+  position: absolute;
+  top: 174px;
+  z-index: 1000;
+  display: none;
+}
+.weixin-box img {
+  display: block;
+  float: left;
+}
+.weixin-box p {
+  background: url(../images/d-list-bg_03.png) no-repeat 5px 15px;
+  width: 100px;
+  font-size: 12px;
+  color: #999;
+  float: left;
+  padding: 10px 0 0 15px;
+}
+
+/*三角形*/
+.sanjiao {
+  width: 0;
+  height: 0;
+  border: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  top: -20px;
+  left: 130px;
+  z-index: 1000;
+}
+
+.pro-about-list-1 {
+  position: relative;
+  top: 0;
+}
+.pro-about-list-1 li {
+  float: left;
+  padding: 30px 0;
+  border: 1px solid #CCCCCC;
+  position: relative;
+  z-index: 10;
+  background: #fff;
+}
+.pro-about-list-1 li i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+.pro-about-list-1 li p {
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 15px;
+  display: none;
+}
+.pro-about-list-1 li p a {
+  font-size: 14px;
+  color: #000;
+}
+.pro-about-list-1 li a {
+  display: block;
+  background: #fff;
+}
+.pro-about-list-1 .prod-block {
+  display: block;
+}
+.pro-about-list-1 .prod-hidden {
+  display: none;
+}
+
+.img_no2 {
+  display: none;
+  width: 235px;
+  height: 235px;
+}
+
+/*# sourceMappingURL=xiangqing.css.map */

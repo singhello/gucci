@@ -6,6 +6,8 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<link rel="stylesheet" type="text/css" href="iconfont/iconfont.css"/>
 		<link rel="stylesheet" type="text/css" href="iconfont1/iconfont.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper-4.3.3.min.css"/>
+		<script type="text/javascript" src="js/swiper-4.3.3.min.js" ></script>
 		<script type="text/javascript" src="js/require.js" defer async="true" data-main="js/main"></script>
 	</head>
 	<body>
@@ -23,10 +25,10 @@
 					</a>
 				</div>
 				<span id="top-right">
-					<a href="denglu.html">登录</a>
+					<a class="sign-0" href="denglu.html">登录</a>
 					<span class="save"><a class="iconfont icon-shoucang1" href=""></a></span>
 					<span class="shop-car"><i class="iconfont icon-baozhuanhuan"></i>&ensp;<a href="shopcar.html">购物袋</a></span>
-					<span><span>搜索</span><a id="fangdajing" href="" class="iconfont icon-fangdajing"></a></span>
+					<span><span class="search">搜索</span><a id="fangdajing" href="" class="iconfont icon-fangdajing"></a></span>
 				</span>
 			</div>
 			<div id="top-nav" class="clear-fix">
@@ -100,18 +102,18 @@
 					</div>
 					<div class="pro-right pro-right-left clear-fix">
 						<a class="pro-right-box" href="">
-							<img src="images/15290644890214088_content_LightGray_Vignette_Standard_80x80_1519301705_Vignette_520128J00705000_001_Light.jpg"/>
+							<img src="images/15290644890214542_content_LightGray_Vignette_Standard_80x80_1527172204_Vignette_523555ZKM804154_001_Light.jpg"/>
 							<br />
-							<span class="pro-name">眼镜</span><br />
+							<span class="pro-name">夹克&大衣</span><br />
 							<i class="pro-intro">超大设计外观从80年代<br>的复古风格中汲取灵感</i><br />
 						</a>
 						<a class="pro-more" href="">更多 &gt;</a>
 					</div>
 					<div class="pro-right pro-right-bottom clear-fix">
 						<a class="pro-right-box" href="">
-							<img src="images/15290644890214088_content_LightGray_Vignette_Standard_80x80_1519301705_Vignette_520128J00705000_001_Light.jpg"/>
+							<img src="images/15290644890216462_content_LightGray_Vignette_Standard_80x80_1528886704_Vignette_516588ZKM804506_001_Light.jpg"/>
 							<br />
-							<span class="pro-name">眼镜</span><br />
+							<span class="pro-name">半裙</span><br />
 							<i class="pro-intro">超大设计外观从80年代<br>的复古风格中汲取灵感</i><br />
 						</a>
 						<a class="pro-more" href="">更多 &gt;</a>
@@ -200,6 +202,7 @@
 			</div>
 		</div>
 		<!--bottom-->
+		<!--bottom-->
 		<div class="bottom-box">
 			<div class="bottom-con clear-fix">
 				<div class="bottom-tubiao">
@@ -270,7 +273,7 @@
 			</div>
 			<div class="footer">
 				<i>©2018 古驰（中国）贸易有限公司 保留所有权利</i>
-				<i><a class="iconfont icon-guohui" href="javascript:;"> 沪公网安备 31010602001727号</a></i>
+				<i class="iconfont icon-guohui"><a class="" href="javascript:;"> 沪公网安备 31010602001727号</a></i>
 				<i><a href="javascript:;">沪ICP备13010397号-2</a></i>
 			</div>
 		</div>
@@ -293,18 +296,63 @@
 							<p><a href="javascript:;">美国</a></p>
 						</div>
 					</div>
-					<div id="area-right">
-						
+					<div id="area-right-box" class="clear-fix">
+						<div class="area-ll"></div>
+						<div class="area-lc"></div>
+						<div class="area-lcc"></div>
+						<div class="area-lr"></div>
 					</div>
 				</div>
 				<div class="area-con-bottom">
-					
+					<div class="area-con-bottom-left">
+						<h6>亚洲</h6>
+						<a href="javascript:;">中国</a>
+						<a href="javascript:;">韩国</a>
+						<a href="javascript:;">日本</a>
+					</div>
+					<div class="area-con-bottom-cenl">
+						<h6>中东</h6>
+						<a href="javascript:;">阿拉伯联合酋长国</a>
+					</div>
+					<div class="area-con-bottom-cenr">
+						<h6>大洋洲</h6>
+						<a href="javascript:;">澳大利亚</a>
+					</div>
+					<div class="area-con-bottom-right">
+						<h6>其他国家</h6>
+						<a href="javascript:;">国际网站</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		
+		<!--登录划过效果-->
+		<div class="sign-in">
+			<div class="sanjiao"></div>
+			<p>拥有古驰账号您将获得以下权利：</p>
+			<ul>
+				<li>保存您的心愿清单</li>
+				<li>个性化您的推荐内容</li>
+				<li>订单寄送追踪及退换货管理</li>
+			</ul>
+			<a class="sign" href="javascript:;">登录</a>
+			<a class="register" href="javascript:;">注册</a>
+		</div>
+		<!--搜索框效果-->
+		<input type="text" name="search-hidden" id="search-hidden" value="" placeholder="搜索商品" />
+		<!--心愿单划过效果-->
+		<div class="drem-list">
+			<div class="sanjiao"></div>
+			<h3>心愿单</h3>
+			<p>您的心愿单为空</p>
+		</div>
+		<!--购物袋效果-->
+		<div class="shop-dai">
+			<div class="sanjiao"></div>
+			<h3>购物袋</h3>
+			<p>您的购物车为空</p>
+		</div>
 		<!--下拉菜单-->
-		<div id="menu">
+		<div id="menu--0">
 			<div class="menu-0">
 				<ul class="clear-fix">
 					<li>
@@ -330,6 +378,8 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div id="menu--1">
 			<div class="menu-1">
 				<ul>
 					<li>
@@ -424,6 +474,184 @@
 					</li>
 				</ul>
 			</div>
+		</div>
+		<div id="menu--2">
+			<div class="menu-1">
+				<ul>
+					<li>
+						<p>男士箱包</p>
+						<a href="javascript:;">新作：Gucci Print</a>
+						<a href="javascript:;">邮差包</a>
+						<a href="javascript:;">背包</a>
+						<a href="javascript:;">腰包</a>
+						<a href="javascript:;">托特包</a>
+						<a href="javascript:;">手拿包</a>
+						<a href="javascript:;">公文包</a>
+						<a href="javascript:;">行李袋</a>
+					</li>
+					<li>
+						<p>男士服饰</p>
+						<a href="javascript:;">夹克&大衣</a>
+						<a href="javascript:;">外套&飞行员夹克</a>
+						<a href="javascript:;">西装</a>
+						<a href="javascript:;">衬衫</a>
+						<a href="javascript:;">毛衣&开衫</a>
+						<a href="javascript:;">运动装</a>
+						<a href="javascript:;">卫衣</a>
+						<a href="javascript:;">T恤&Polo衫</a>
+						<a href="javascript:;">裤装</a>
+						<a href="javascript:;">牛仔装</a>
+					</li>
+					<li>
+						<p>男鞋</p>
+						<a href="javascript:;">莫卡辛鞋&乐福鞋</a>
+						<a href="javascript:;">系带鞋</a>
+						<a href="javascript:;">靴子</a>
+						<a href="javascript:;">时装拖鞋</a>
+						<a href="javascript:;">驾车鞋</a>
+						<a href="javascript:;">运动鞋</a>
+						<a href="javascript:;">凉鞋&平底凉拖</a>
+					</li>
+					<li>
+						<p>配饰</p>
+						<a href="javascript:;">钱包&小皮件</a>
+						<a href="javascript:;">腰带</a>
+						<a href="javascript:;">珠宝</a>
+						<a href="javascript:;">腕表</a>
+						<a href="javascript:;">眼镜</a>
+						<a href="javascript:;">领带</a>
+						<a href="javascript:;">围巾</a>
+						<a href="javascript:;">帽子&手套</a>
+						<a href="javascript:;">短袜</a>
+						<a href="javascript:;">香水</a>
+					</li>
+					<li>
+						<p>专题</p>
+						<a href="javascript:;">Harry Styles</a>
+						<a href="javascript:;">BAIADERA</a>
+						<a href="javascript:;">Ace Sneakers</a>
+						<a href="javascript:;">Gucci Courrier</a>
+						<a href="javascript:;">Gucci Print</a>
+						<a href="javascript:;">Gucci Guilty</a>
+					</li>
+					<li class="slider">
+						<a href="javascript:;">
+							<img style="z-index: 1;" src="images/15262601894981706_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15242275756362408_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15262602445559576_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15262602710762474_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15262602846977999_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15262603105338175_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15262603293077433_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15262603460462582_165X230.png"/>
+						</a>
+						<a href="javascript:;">
+							<img src="images/15252235136598686_165X230.png"/>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="menu--3">
+			<ul>
+				<li>
+					<p>银饰</p>
+					<a href="javascript:;">女士</a>
+					<a href="javascript:;">男士</a>
+					<a href="javascript:;">戒指</a>
+					<a href="javascript:;">项链</a>
+					<a href="javascript:;">手镯</a>
+					<a href="javascript:;">耳饰</a>
+					<a href="javascript:;">坠饰</a>
+				</li>
+				<li>
+					<p>时尚首饰</p>
+					<a href="javascript:;">女士</a>
+					<a href="javascript:;">男士</a>
+					<a href="javascript:;">戒指</a>
+					<a href="javascript:;">项链</a>
+					<a href="javascript:;">手镯</a>
+					<a href="javascript:;">耳饰</a>
+					<a href="javascript:;">胸针</a>
+				</li>
+				<li>
+					<p>腕表</p>
+					<a href="javascript:;">腕表</a>
+					<a href="javascript:;">女士</a>
+					<a href="javascript:;">男士</a>
+				</li>
+			</ul>
+		</div>
+		<div id="menu--4">
+			<ul>
+				<li>
+					<a href="javascript:;">浏览所有</a>
+					<a href="javascript:;">家居香薰</a>
+					<a href="javascript:;">马克杯</a>
+					<a href="javascript:;">餐具</a>
+				</li>
+				<li>
+					<a href="javascript:;">花瓶</a>
+					<a href="javascript:;">托盘&折叠桌</a>
+					<a href="javascript:;">靠垫</a>
+					<a href="javascript:;">椅子&扶手椅</a>
+				</li>
+				<li>
+					<a href="javascript:;">屏风</a>
+					<a href="javascript:;">壁纸</a>
+				</li>
+				<li>
+					<img src="images/15174751227506362_718X266.png"/>
+				</li>
+			</ul>
+		</div>
+		<div id="menu--5">
+			<ul>
+				<li>
+					<a href="javascript:;">女士礼品</a>
+					<a href="javascript:;">男士礼品</a>
+				</li>
+				<li>
+					<a href="javascript:;">家饰礼品</a>
+				</li>
+			</ul>
+		</div>
+		<div id="menu--6">
+			<ul>
+				<li>
+					<a href="javascript:;">浏览所有</a>
+					<a href="javascript:;">秀场</a>
+					<a href="javascript:;">广告大片</a>
+					<a href="javascript:;">灵感&设计元素</a>
+				</li>
+				<li>
+					<a href="javascript:;">视频</a>
+					<a href="javascript:;">人物&活动</a>
+					<a href="javascript:;">彩妆</a>
+					<a href="javascript:;">配饰</a>
+				</li>
+				<li>
+					<a href="javascript:;">Gucci Places</a>
+					<a href="javascript:;">Gucci Equilibrium</a>
+				</li>
+				<li>
+					<img src="images/15278299864636512_718X266.png"/>
+				</li>
+			</ul>
 		</div>
 	</body>
 </html>
